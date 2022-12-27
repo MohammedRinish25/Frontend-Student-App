@@ -1,17 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
+import { StudentListComponent } from './components/student-list/student-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'landing',
+    redirectTo: 'student-list',
     pathMatch: 'full'
   },
-  {path:'landing',loadChildren:()=>import('./landing/landing.module').then(m=>m.LandingModule),},
-  {path:'admin',loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule),canActivate:[AuthGuard],data:{roles: ["ADMINISTRATOR","user"]}},
-  {path:'user',loadChildren:()=>import('./user/user.module').then(m=>m.UserModule),canActivate:[AuthGuard],data:{roles: ["user"]}},
-  
+  {
+   path:'student-list',
+   component:StudentListComponent,
+   canActivate:[AuthGuard],
+   data:{roles: ["ADMINISTRATOR","user","employee"]}
+  },
+  {path:'student-details',
+  component:StudentDetailsComponent,
+  canActivate:[AuthGuard],
+  data:{roles: ["ADMINISTRATOR","user","employee"]}
+  }
   
 ];
 

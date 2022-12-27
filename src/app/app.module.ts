@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
+import { MaterialsModule } from './modules/materials/materials.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { StudentListComponent } from './components/student-list/student-list.com
   ],
   imports: [
     BrowserModule,
+    MaterialsModule,
     AppRoutingModule,
+    HttpClientModule,
     AuthModule
   ],
   providers: [],

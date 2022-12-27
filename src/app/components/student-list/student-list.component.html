@@ -1,1 +1,131 @@
-<p>student-list works!</p>
+<div class="mat-elevation-z8">
+
+<table mat-table [dataSource]="students" class="mat-elevation-z8">
+  
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let student"> {{student.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let student"> {{student.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="admissionNumber">
+      <th mat-header-cell *matHeaderCellDef> admissionNumber </th>
+      <td mat-cell *matCellDef="let student"> {{student.admissionNumber}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="section">
+      <th mat-header-cell *matHeaderCellDef> section </th>
+      <td mat-cell *matCellDef="let student"> {{student.section}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="division">
+      <th mat-header-cell *matHeaderCellDef> division </th>
+      <td mat-cell *matCellDef="let student"> {{student.division}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalMarks">
+      <th mat-header-cell *matHeaderCellDef> totalMarks </th>
+      <td mat-cell *matCellDef="let student"> {{student.totalMarks}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="percentage">
+      <th mat-header-cell *matHeaderCellDef> percentage </th>
+      <td mat-cell *matCellDef="let student"> {{student.percentage}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> email </th>
+      <td mat-cell *matCellDef="let student"> {{student.email}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="result">
+      <th mat-header-cell *matHeaderCellDef> result </th>
+      <td mat-cell *matCellDef="let student"> {{student.result}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dateOfBirth">
+      <th mat-header-cell *matHeaderCellDef> dateOfBirth </th>
+      <td mat-cell *matCellDef="let student"> {{student.dateOfBirth}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> gender </th>
+      <td mat-cell *matCellDef="let student"> {{student.gender}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nationality">
+      <th mat-header-cell *matHeaderCellDef> nationality </th>
+      <td mat-cell *matCellDef="let student"> {{student.nationality}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="schoolName">
+      <th mat-header-cell *matHeaderCellDef> schoolName </th>
+      <td mat-cell *matCellDef="let student"> {{student.schoolName}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="mediumOfInstruction">
+      <th mat-header-cell *matHeaderCellDef> mediumOfInstruction </th>
+      <td mat-cell *matCellDef="let student"> {{student.mediumOfInstruction}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="phoneNumber">
+      <th mat-header-cell *matHeaderCellDef> phoneNumber </th>
+      <td mat-cell *matCellDef="let student"> {{student.phoneNumber}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="emergencyContact">
+      <th mat-header-cell *matHeaderCellDef> emergencyContact </th>
+      <td mat-cell *matCellDef="let student"> {{student.emergencyContact}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="religion">
+      <th mat-header-cell *matHeaderCellDef> religion </th>
+      <td mat-cell *matCellDef="let student"> {{student.religion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fathername">
+      <th mat-header-cell *matHeaderCellDef> fathername </th>
+      <td mat-cell *matCellDef="let student"> {{student.fathername}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="occupation">
+      <th mat-header-cell *matHeaderCellDef> occupation </th>
+      <td mat-cell *matCellDef="let student"> {{student.occupation}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="annualIncome">
+      <th mat-header-cell *matHeaderCellDef> annualIncome </th>
+      <td mat-cell *matCellDef="let student"> {{student.annualIncome}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="remark">
+      <th mat-header-cell *matHeaderCellDef> remark </th>
+      <td mat-cell *matCellDef="let student"> {{student.remark}} </td>
+    </ng-container>
+
+  
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+   <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons 
+                 aria-label="Select page of periodic student">
+  </mat-paginator>  -->
+
+</div>
