@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
+import { AddUpdateComponent } from './components/add-update/add-update.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
 
@@ -9,6 +10,10 @@ const routes: Routes = [
     path: '',
     redirectTo: 'student-list',
     pathMatch: 'full'
+  },
+  {
+    path:'add-update',
+    component: AddUpdateComponent
   },
   {
    path:'student-list',

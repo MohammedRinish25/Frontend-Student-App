@@ -12,7 +12,7 @@ export class StudentService {
 
   
 
-  private _baseUrl="http://localhost:8081/student-api/students";
+  private _baseUrl="http://localhost:8081/students";
 
   getStudents=():Observable<Student[]>=>{
     return this._http.get<Student[]>(this._baseUrl);

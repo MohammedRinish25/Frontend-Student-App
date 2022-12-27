@@ -1,7 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
@@ -12,6 +13,8 @@ import { StudentDetailsComponent } from './components/student-details/student-de
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { MaterialsModule } from './modules/materials/materials.module';
 
+//import { GridModule, ToolbarService, ColumnChooserService } from '@syncfusion/ej2-angular-grids';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +23,18 @@ import { MaterialsModule } from './modules/materials/materials.module';
     NavBarComponent,
     StudentDetailsComponent,
     StudentListComponent
+   
   ],
   imports: [
     BrowserModule,
     MaterialsModule,
     AppRoutingModule,
     HttpClientModule,
-    AuthModule
+    AuthModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

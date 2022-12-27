@@ -1,1 +1,191 @@
-<p>add-update works!</p>
+<mat-card class="example-card" style="width:400px;">
+    <form [formGroup]="addStudentForm" (ngSubmit)="onAddStudent(addStudentForm)">
+   
+
+    <mat-card-content>
+     <div>
+      <label for="id">Id</label>
+      <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+          <input matInput formControlName="id" required>
+      </mat-form-field>
+   </div>
+   <div>
+    <label for="name">Name</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="name">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="admissionNumber">admissionNumber</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="admissionNumber">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="section">section</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="section">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="division">division</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="division">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="totalMarks">totalMarks</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="totalMarks">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="percentage">percentage</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="percentage">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="result">result</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="result">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="dateOfBirth">dateOfBirth</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="dateOfBirth">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="gender">gender</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="gender">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="nationality">nationality</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="nationality">
+    </mat-form-field>
+ </div>
+
+ 
+ <div>
+    <form formGroupName="address">
+        <table class="example-full-width" cellspacing="0"><tr>
+            <td><mat-form-field class="example-full-width">
+              <mat-label>City</mat-label>
+              <input matInput placeholder="Ex. San Francisco" formControlName="city">
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+              <mat-label>State</mat-label>
+              <input matInput placeholder="Ex. California" formControlName="state">
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+                <mat-label>Country</mat-label>
+                <input matInput placeholder="Ex. California" formControlName="country">
+              </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+              <mat-label>Postal Code</mat-label>
+              <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043" formControlName="zip">
+              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            </mat-form-field></td>
+          </tr></table>
+    </form>
+ </div>
+
+ <div>
+    <label for="schoolName">schoolName</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="schoolName">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="mediumOfInstruction">mediumOfInstruction</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="mediumOfInstruction">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="phoneNumber">phoneNumber</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="phoneNumber">
+    </mat-form-field>
+ </div>
+
+ <div>
+    <label for="emergencyContact">emergencyContact</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="emergencyContact">
+    </mat-form-field>
+ </div>
+
+ 
+
+ <div>
+    <label for="email">email</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="email">
+    </mat-form-field>
+ </div>
+
+
+ <div>
+    <label for="religion">religion</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="religion">
+    </mat-form-field>
+ </div>
+
+
+ <div>
+    <label for="fathername">fathername</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="fathername">
+    </mat-form-field>
+ </div>
+
+
+ <div>
+    <label for="occupation">occupation</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="occupation">
+    </mat-form-field>
+ </div>
+
+
+ <div>
+    <label for="annualIncome">annualIncome</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="annualIncome">
+    </mat-form-field>
+ </div>
+
+
+ <div>
+    <label for="remark">remark</label>
+    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
+        <input matInput formControlName="remark">
+    </mat-form-field>
+ </div>
+
+   </mat-card-content>
+ 
+    <button type="submit" mat-raised-button color="primary" >Add</button>
+  
+   
+   </form>
+           
+     </mat-card>

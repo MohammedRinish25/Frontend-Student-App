@@ -1,20 +1,7 @@
-.redirect{
-    float: left;
-    background-color: navy;
-    list-style-type: none; 
-    width: 100%;
-    height: 50px;
+.example-spacer {
+   flex: 1 ;
  }
-
- li{
-     display: inline-block;
-     padding: 10px;
-     font-size: large;
-  }
-  a{
-     text-decoration: none   ;
-     color:white;
-  }
-  a:hover{
-    color: #c9d1d5;
-  }
+ .mat-toolbar{
+   background-color:navy;
+   height: 50px;
+ }

@@ -26,7 +26,7 @@ constructor(
 	    public fathername:string,
 	    public occupation:string,
 	    public annualIncome:number,
-	    private remark:string
+	    public remark:string
 ){}
 	    
 }

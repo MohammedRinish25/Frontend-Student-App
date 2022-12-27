@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Student } from 'src/app/models/student';
 import { StudentService } from 'src/app/service/student.service';
 
@@ -9,11 +9,15 @@ import { StudentService } from 'src/app/service/student.service';
 })
 export class StudentListComponent implements OnInit {
 
+ 
+
   constructor(private _studentService:StudentService) { }
 
   students:Student[]=[];
 
  displayedColumns: string[] = [ 'id', 'name', 'admissionNumber','section','division','totalMarks','percentage','result','dateOfBirth','gender','nationality','schoolName','mediumOfInstruction','phoneNumber','emergencyContact','email','religion','fathername','occupation','annualIncome','remark'];
+
+
 
   ngOnInit(): void {
 
@@ -25,6 +29,7 @@ export class StudentListComponent implements OnInit {
       error:(data)=>console.log(data),
       complete:()=>console.log("Completed")
     })
+    
 
 }
 }

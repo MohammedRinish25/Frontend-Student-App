@@ -1,8 +1,22 @@
-<!-- <div [ngClass]="'redirect'">
-    <ul>
-        <li><a routerLink="home" routerLinkActive>Home</a></li>
-        <li><a routerLink="StudentDetails">StudentDetails</a></li>
-    </ul>
-</div> -->
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>home</mat-icon>
+    </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+  
+     
+       <mat-icon (click)="onClick()" class='material-icons-outlined' style = "float:  right;" >logout</mat-icon>
+      
+      
+      <span>Student Application</span>
+      <span class="example-spacer"></span>
 
-<app-student-list></app-student-list>
+      <!-- <button mat-raised-button color="warn"  style = "position:fixed; right:120px;">Add Student</button> -->
+      <li class="add">
+        <a routerLink="add-update" routerLinkActive="active" class="nav-link" >Add Student</a>
+      </li>
+    </mat-toolbar>
+
+    <app-student-list></app-student-list>
