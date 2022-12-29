@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Address } from 'src/app/models/address';
 import { Student } from 'src/app/models/student';
 import { StudentService } from 'src/app/service/student.service';
@@ -13,12 +14,15 @@ import { StudentService } from 'src/app/service/student.service';
 })
 export class AddUpdateComponent implements OnInit {
 
-student!:Student;
+ student!:Student;
  address!:Address;
-  constructor(private _studentService:StudentService) { }
+  constructor(private _studentService:StudentService,private _router:Router,private _activatedRoute:ActivatedRoute) { }
 
-  ngOnInit(): void {
-  }
+  id!:number;
+
+  studentObj!:Student;
+
+  
  
   addStudentForm=new FormGroup({
     id:new FormControl(),
@@ -51,15 +55,35 @@ student!:Student;
 
 })
 
+ngOnInit(): void {
+  this._activatedRoute.params.subscribe({
+    next:(data)=>{
+        this.id=data["id"];
+    }
+  })
+  this._studentService.getById(this.id).subscribe({
+    next:(data)=>{
+      this.studentObj=data;
+      this.addStudentForm.setValue(data);
+      console.log("Student--------"+this.studentObj.name);
+    }
+  })
+}
+
+
 onAddStudent=(addForm:any)=>{
   console.log(addForm);
-// console.log(this.addStudentForm.value);
+
 this.student=addForm.value;
-console.log(this.student);
 this._studentService.saveStudent(this.student).subscribe({
 next:(data)=>console.log(data)
 })
 }
 
+
+
+backToHome(){
+  this._router.navigate(['/student-list'])
+}
 
 }

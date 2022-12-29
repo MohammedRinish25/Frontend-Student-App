@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/service/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from 'src/app/auth/service/auth.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private _service:AuthService) { }
+  constructor(private _service:AuthService,private _router:Router) { }
 
   ngOnInit(): void {
   }
@@ -16,6 +17,10 @@ export class NavBarComponent implements OnInit {
   onClick=()=>{
     this._service.logout();
 
+  }
+
+  addStudent(){
+    this._router.navigate(['/add-student'])
   }
 
 }

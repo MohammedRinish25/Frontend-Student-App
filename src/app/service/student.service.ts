@@ -1,8 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable,map } from 'rxjs';
 import { Student } from '../models/student';
 
+
+type studentListResponse = {
+  content: Student[]
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +24,7 @@ export class StudentService {
   }
 
   getById=(id:number):Observable<Student>=>{
-    let url=this._baseUrl+id;
+    let url=this._baseUrl+"/"+id;
     return this._http.get<Student>(url);
   }
 
@@ -32,9 +36,15 @@ export class StudentService {
     return this._http.put<Student>(this._baseUrl,student);
   }
 
-  deleteStudent=(student:Student):Observable<Student>=>{
+  deleteStudent=(id:number)=>{
+    let url=this._baseUrl+"/"+id;
+    return this._http.delete(url);
+  }
 
-    return this._http.delete<Student>(this._baseUrl);
+  studentPagination=(records:number,pageIndex:number):Observable<Student[]>=>{
+    return this._http.get<studentListResponse>(this._baseUrl+("/")+pageIndex+("/")+records).pipe(map((response)=>{
+      return response.content;
+    }));
   }
 
  

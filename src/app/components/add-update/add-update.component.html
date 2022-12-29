@@ -1,87 +1,116 @@
-<mat-card class="example-card" style="width:400px;">
+ <!-- <mat-card class="example-card" style="width:400px;">  -->
     <form [formGroup]="addStudentForm" (ngSubmit)="onAddStudent(addStudentForm)">
+        
+
+    <!-- <mat-card-content> -->
+     
+      <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter Id</mat-label>
+          <input type="number" matInput formControlName="id"  required>
+      </mat-form-field>
+   
+   <br>
+   
+   
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Name</mat-label>
+        <input type="text" matInput formControlName="name" required>
+    </mat-form-field>
+
+
+ <br>
+
+
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Admission Number</mat-label>
+        <input type="text" matInput formControlName="admissionNumber" required>
+    </mat-form-field>
+ 
+<br>
+
+   
+    <mat-form-field  appearance="fill">
+        <mat-label>Enter Section</mat-label>
+        <mat-select type="text" matInput formControlName="section" required >
+        <mat-option value="VI">VI</mat-option>
+        <mat-option value="VII">VII</mat-option>
+        <mat-option value="VIII">VIII</mat-option>
+        <mat-option value="IX">IX</mat-option>
+        <mat-option value="X">X</mat-option>
+        <mat-option value="XI">XI</mat-option>
+        <mat-option value="XII">XII</mat-option>
+    </mat-select>
+    </mat-form-field>
+ 
+    <br>
+
    
 
-    <mat-card-content>
-     <div>
-      <label for="id">Id</label>
-      <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-          <input matInput formControlName="id" required>
-      </mat-form-field>
-   </div>
-   <div>
-    <label for="name">Name</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="name">
+    <mat-radio-group aria-label="Enter Division"  matInput formControlName="division" required>
+        <mat-label>Enter Division</mat-label>
+        <mat-radio-button type="text" value="A">A</mat-radio-button>
+        <mat-radio-button value="B">B</mat-radio-button>
+        <mat-radio-button value="C">C</mat-radio-button>
+      </mat-radio-group>
+    
+<br>
+  
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Total Marks</mat-label>
+        <input type="number" matInput formControlName="totalMarks">
     </mat-form-field>
- </div>
+    
 
- <div>
-    <label for="admissionNumber">admissionNumber</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="admissionNumber">
+ <br>  
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter percentage</mat-label>
+        <input type="number" matInput formControlName="percentage" required>
     </mat-form-field>
- </div>
-
- <div>
-    <label for="section">section</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="section">
+    
+<br>
+   
+    
+    <mat-radio-group aria-label="Enter Result"  type="text"matInput formControlName="result" required>
+        <mat-radio-button value="PASS">PASS</mat-radio-button>
+        <mat-radio-button value="FAIL">FAIL</mat-radio-button>
+        
+      </mat-radio-group>
+    
+<br>
+   
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Date Of Birth</mat-label>
+        <input type="date" matInput [matDatepicker]="picker" matInput formControlName="dateOfBirth">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <!-- <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle> -->
+        <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
- </div>
+<br>
+    <mat-radio-group aria-label="Enter Gender" type="text" matInput formControlName="gender" required>
+        <mat-radio-button value="MALE">MALE</mat-radio-button>
+        <mat-radio-button value="FEMALE">FEMALE</mat-radio-button>
+        <mat-radio-button value="OTHERS">OTHERS</mat-radio-button>
+      </mat-radio-group>
+   <br> 
+    
 
- <div>
-    <label for="division">division</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="division">
-    </mat-form-field>
- </div>
-
- <div>
-    <label for="totalMarks">totalMarks</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="totalMarks">
-    </mat-form-field>
- </div>
-
- <div>
-    <label for="percentage">percentage</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="percentage">
-    </mat-form-field>
- </div>
-
- <div>
-    <label for="result">result</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="result">
-    </mat-form-field>
- </div>
-
- <div>
-    <label for="dateOfBirth">dateOfBirth</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="dateOfBirth">
-    </mat-form-field>
- </div>
-
- <div>
-    <label for="gender">gender</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="gender">
-    </mat-form-field>
- </div>
-
- <div>
-    <label for="nationality">nationality</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="nationality">
-    </mat-form-field>
- </div>
-
- 
- <div>
+   
+   <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Enter Nationality</mat-label>
+    <mat-select type="text" matInput formControlName="nationality" required >
+    <mat-option value="INDIAN">INDIAN</mat-option>
+    <mat-option value="OTHERS">OTHERS</mat-option>
+   
+</mat-select>
+</mat-form-field>
+<br>
+   
     <form formGroupName="address">
+        <mat-label>Enter Address</mat-label>
         <table class="example-full-width" cellspacing="0"><tr>
             <td><mat-form-field class="example-full-width">
               <mat-label>City</mat-label>
@@ -102,90 +131,99 @@
             </mat-form-field></td>
           </tr></table>
     </form>
- </div>
-
- <div>
-    <label for="schoolName">schoolName</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="schoolName">
+    
+<br>
+   
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter schoolName</mat-label>
+        <input type="text"matInput formControlName="schoolName" required>
     </mat-form-field>
- </div>
+   <br> 
+    <mat-radio-group aria-label="Enter Medium Of Instrucion" type="text" matInput formControlName="mediumOfInstruction" required>
+        <mat-radio-button value="ENGLISH">ENGLISH</mat-radio-button>
+        <mat-radio-button value="OTHERS">OTHERS</mat-radio-button>
+        
+      </mat-radio-group>
+   
+   <br> 
+    
 
- <div>
-    <label for="mediumOfInstruction">mediumOfInstruction</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="mediumOfInstruction">
+   
+     
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Phone Number</mat-label>
+        <input type="number" matInput formControlName="phoneNumber" required>
     </mat-form-field>
- </div>
-
- <div>
-    <label for="phoneNumber">phoneNumber</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="phoneNumber">
+    
+<br>
+   
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Emergency Contact</mat-label>
+        <input type="number" matInput formControlName="emergencyContact" required>
     </mat-form-field>
- </div>
-
- <div>
-    <label for="emergencyContact">emergencyContact</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="emergencyContact">
-    </mat-form-field>
- </div>
-
+<br>
  
 
- <div>
-    <label for="email">email</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="email">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Email</mat-label>
+        <input type="email" matInput formControlName="email" required>
     </mat-form-field>
- </div>
-
-
- <div>
-    <label for="religion">religion</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="religion">
+<br>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Religion</mat-label>
+        <mat-select type="text" matInput formControlName="religion" required >
+        <mat-option value="HINDU">HINDU</mat-option>
+        <mat-option value="MUSLIM">MUSLIM</mat-option>
+        <mat-option value="CHRISTIAN">CHRISTIAN</mat-option>
+        <mat-option value="OTHERS">OTHERS</mat-option>
+        
+    </mat-select>
     </mat-form-field>
- </div>
 
 
- <div>
-    <label for="fathername">fathername</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="fathername">
+   
+   <br>
+    
+
+
+   
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Father Name</mat-label>
+        <input type="text" matInput formControlName="fathername" required>
     </mat-form-field>
- </div>
+    
 
-
- <div>
-    <label for="occupation">occupation</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="occupation">
+<br>
+   
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Occupation</mat-label>
+        <input type="text" matInput formControlName="occupation" required>
     </mat-form-field>
- </div>
+    
 
+<br>
+   
 
- <div>
-    <label for="annualIncome">annualIncome</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="annualIncome">
+   
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Annual Income</mat-label>
+        <input type="number" matInput formControlName="annualIncome" required>
     </mat-form-field>
- </div>
 
-
- <div>
-    <label for="remark">remark</label>
-    <mat-form-field appearance="outline" [ngStyle]="{'height': '50px'}">
-        <input matInput formControlName="remark">
+  <br>  
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Enter Remark</mat-label>
+        <input type="text" matInput formControlName="remark" required>
     </mat-form-field>
- </div>
+    <br>
 
-   </mat-card-content>
- 
-    <button type="submit" mat-raised-button color="primary" >Add</button>
-  
+   <!-- </mat-card-content>
+  -->
+   
+  <button type="submit" mat-raised-button color="primary" >Add</button>
    
    </form>
-           
-     </mat-card>
+   <br>        
+     <!-- </mat-card> -->
+ <button type="submit" (click)="backToHome()" mat-raised-button color="primary" >Back</button>
+  

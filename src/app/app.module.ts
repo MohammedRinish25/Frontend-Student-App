@@ -23,6 +23,7 @@ import { MaterialsModule } from './modules/materials/materials.module';
     NavBarComponent,
     StudentDetailsComponent,
     StudentListComponent
+    
    
   ],
   imports: [
@@ -34,6 +35,7 @@ import { MaterialsModule } from './modules/materials/materials.module';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule
+    
    
   ],
   providers: [],

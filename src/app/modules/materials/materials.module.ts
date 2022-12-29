@@ -11,7 +11,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatCardModule} from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
-
+import { MatOptionModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [],
@@ -26,7 +30,12 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatOptionModule,
+    MatRadioModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatPaginatorModule
   
     
   ],
@@ -40,7 +49,13 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatOptionModule,
+    MatRadioModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatPaginatorModule
    
   ]
 })

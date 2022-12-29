@@ -7,12 +7,16 @@ import { StudentListComponent } from './components/student-list/student-list.com
 
 const routes: Routes = [
   {
-    path: '',
+    path:'',
     redirectTo: 'student-list',
     pathMatch: 'full'
   },
   {
-    path:'add-update',
+    path:'add-student',
+    component: AddUpdateComponent
+  },
+  {
+    path:'edit-student/:id',
     component: AddUpdateComponent
   },
   {
@@ -21,7 +25,7 @@ const routes: Routes = [
    canActivate:[AuthGuard],
    data:{roles: ["ADMINISTRATOR","user","employee"]}
   },
-  {path:'student-details',
+  {path:'student-details/:id',
   component:StudentDetailsComponent,
   canActivate:[AuthGuard],
   data:{roles: ["ADMINISTRATOR","user","employee"]}

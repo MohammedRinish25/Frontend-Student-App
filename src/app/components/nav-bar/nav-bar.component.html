@@ -14,9 +14,12 @@
       <span class="example-spacer"></span>
 
       <!-- <button mat-raised-button color="warn"  style = "position:fixed; right:120px;">Add Student</button> -->
-      <li class="add">
+      <!-- <li class="add">
+       
         <a routerLink="add-update" routerLinkActive="active" class="nav-link" >Add Student</a>
-      </li>
+      </li> -->
+      <button type="submit" mat-raised-button color="primary" (click)="addStudent()">Add Student</button>
     </mat-toolbar>
 
-    <app-student-list></app-student-list>
+   
+    
