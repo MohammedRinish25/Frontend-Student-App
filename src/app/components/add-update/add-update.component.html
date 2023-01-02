@@ -1,10 +1,11 @@
  <!-- <mat-card class="example-card" style="width:400px;">  -->
+    <body>
     <form [formGroup]="addStudentForm" (ngSubmit)="onAddStudent(addStudentForm)">
         
 
     <!-- <mat-card-content> -->
      
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Enter Id</mat-label>
           <input type="number" matInput formControlName="id"  required>
       </mat-form-field>
@@ -13,7 +14,7 @@
    
    
     
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Name</mat-label>
         <input type="text" matInput formControlName="name" required>
     </mat-form-field>
@@ -23,7 +24,7 @@
 
 
     
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Admission Number</mat-label>
         <input type="text" matInput formControlName="admissionNumber" required>
     </mat-form-field>
@@ -31,7 +32,7 @@
 <br>
 
    
-    <mat-form-field  appearance="fill">
+    <mat-form-field  appearance="outline">
         <mat-label>Enter Section</mat-label>
         <mat-select type="text" matInput formControlName="section" required >
         <mat-option value="VI">VI</mat-option>
@@ -58,7 +59,7 @@
 <br>
   
     
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Total Marks</mat-label>
         <input type="number" matInput formControlName="totalMarks">
     </mat-form-field>
@@ -66,7 +67,7 @@
 
  <br>  
     
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter percentage</mat-label>
         <input type="number" matInput formControlName="percentage" required>
     </mat-form-field>
@@ -82,7 +83,7 @@
     
 <br>
    
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Date Of Birth</mat-label>
         <input type="date" matInput [matDatepicker]="picker" matInput formControlName="dateOfBirth">
         <mat-hint>MM/DD/YYYY</mat-hint>
@@ -99,7 +100,7 @@
     
 
    
-   <mat-form-field class="example-full-width" appearance="fill">
+   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Enter Nationality</mat-label>
     <mat-select type="text" matInput formControlName="nationality" required >
     <mat-option value="INDIAN">INDIAN</mat-option>
@@ -134,7 +135,7 @@
     
 <br>
    
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter schoolName</mat-label>
         <input type="text"matInput formControlName="schoolName" required>
     </mat-form-field>
@@ -150,26 +151,26 @@
 
    
      
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Phone Number</mat-label>
         <input type="number" matInput formControlName="phoneNumber" required>
     </mat-form-field>
     
 <br>
    
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Emergency Contact</mat-label>
         <input type="number" matInput formControlName="emergencyContact" required>
     </mat-form-field>
 <br>
  
 
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Email</mat-label>
         <input type="email" matInput formControlName="email" required>
     </mat-form-field>
 <br>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Religion</mat-label>
         <mat-select type="text" matInput formControlName="religion" required >
         <mat-option value="HINDU">HINDU</mat-option>
@@ -187,7 +188,7 @@
 
 
    
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Father Name</mat-label>
         <input type="text" matInput formControlName="fathername" required>
     </mat-form-field>
@@ -195,7 +196,7 @@
 
 <br>
    
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Occupation</mat-label>
         <input type="text" matInput formControlName="occupation" required>
     </mat-form-field>
@@ -205,13 +206,13 @@
    
 
    
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Annual Income</mat-label>
         <input type="number" matInput formControlName="annualIncome" required>
     </mat-form-field>
 
   <br>  
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Enter Remark</mat-label>
         <input type="text" matInput formControlName="remark" required>
     </mat-form-field>
@@ -220,10 +221,14 @@
    <!-- </mat-card-content>
   -->
    
-  <button type="submit" mat-raised-button color="primary" >Add</button>
-   
+  <button type="submit" (click)="showAlert()" mat-raised-button color="primary" >SAVE</button>
+  <div class="alert" [class.visible]="isVisible"> 
+    Saved Successfully
+  </div>
    </form>
-   <br>        
+   <br>   
+   
+</body>
      <!-- </mat-card> -->
- <button type="submit" (click)="backToHome()" mat-raised-button color="primary" >Back</button>
+ <!-- <button type="submit" (click)="backToHome()" mat-raised-button color="primary" >BACK</button> -->
   

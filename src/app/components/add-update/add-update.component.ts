@@ -79,11 +79,17 @@ this._studentService.saveStudent(this.student).subscribe({
 next:(data)=>console.log(data)
 })
 }
+public isVisible: boolean = false;
+
+  showAlert() : void {
+    if (this.isVisible) { 
+      return;
+    } 
+    this.isVisible = true;
+    setTimeout(()=> this.isVisible = false,2500)
+  }
 
 
 
-backToHome(){
-  this._router.navigate(['/student-list'])
-}
 
 }

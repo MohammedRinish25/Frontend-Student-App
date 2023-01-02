@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { AddUpdateComponent } from './components/add-update/add-update.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
+import { StudentGridComponent } from './components/student-grid/student-grid.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
 
 const routes: Routes = [
@@ -13,22 +14,32 @@ const routes: Routes = [
   },
   {
     path:'add-student',
-    component: AddUpdateComponent
+    component: AddUpdateComponent,
+    canActivate:[AuthGuard],
+    data:{roles: ["MANAGER"]}
   },
   {
     path:'edit-student/:id',
-    component: AddUpdateComponent
+    component: AddUpdateComponent,
+    canActivate:[AuthGuard],
+    data:{roles: ["MANAGER","EDITOR"]}
   },
   {
    path:'student-list',
    component:StudentListComponent,
    canActivate:[AuthGuard],
-   data:{roles: ["ADMINISTRATOR","user","employee"]}
+   data:{roles: ["MANAGER","EDITOR","MEMBER"]}
   },
+  {
+    path:'student-grid',
+    component:StudentGridComponent,
+    canActivate:[AuthGuard],
+    data:{roles: ["MANAGER","EDITOR","MEMBER"]}
+   },
   {path:'student-details/:id',
   component:StudentDetailsComponent,
   canActivate:[AuthGuard],
-  data:{roles: ["ADMINISTRATOR","user","employee"]}
+  data:{roles: ["MANAGER","EDITOR","MEMBER"]}
   }
   
 ];

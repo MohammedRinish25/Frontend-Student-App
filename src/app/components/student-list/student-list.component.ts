@@ -12,16 +12,19 @@ import { StudentService } from 'src/app/service/student.service';
 })
 export class StudentListComponent implements OnInit {
 
- 
+  
 
   constructor(private _studentService:StudentService,private _router:Router, private _dialog:MatDialog,) { }
-
+//change
+   index!:number;
+   records!:number;
+   //change
   students:Student[]=[];
 
  displayedColumns: string[] = [ 'id', 'name', 'admissionNumber','section','division','totalMarks','percentage','result','dateOfBirth','gender','nationality','schoolName','mediumOfInstruction','phoneNumber','emergencyContact','email','religion','fathername','occupation','annualIncome','remark','edit','delete'];
   columns:string[]=[];
 flag:boolean=true;
-
+direction:string='DESC';
 temp:boolean=true;
 
 onSelect(event:any){
@@ -40,10 +43,17 @@ onSelect(event:any){
       error:(data)=>console.log(data),
       complete:()=>console.log("Completed")
     })
+    //change
+    this.index=0;
+    this.records=5;
 
    
 
 }
+
+// addStudent(){
+//   this._router.navigate(['/add-student'])
+// }
 
 
 studentDetails(student:Student){
@@ -77,10 +87,10 @@ deleteStudent(element:Student){
 
 
 pagination(PageSizeOptions:PageEvent){
-  let records=PageSizeOptions.pageSize;
-  let index=PageSizeOptions.pageIndex;
-  console.log(index);
-  this._studentService.studentPagination(records,index).subscribe({
+ this. records=PageSizeOptions.pageSize;
+ this. index=PageSizeOptions.pageIndex;
+  console.log(this.index);
+  this._studentService.studentPagination(this.records,this.index).subscribe({
     next:(data)=>{
       this.students=data;
       console.log(this.students);
@@ -91,15 +101,32 @@ pagination(PageSizeOptions:PageEvent){
   })
 }
 
-gridChange(){
-  if(this.flag){
-    this.flag=false;
+sort(field:string){
+  if(this.direction==='DESC'){
+    this.direction='ASC';
   }
   else{
-    this.flag=true;
+    this.direction='DESC';
   }
-  this.temp=false;
+  console.log("INSIDE SORT")
+  this._studentService.studentPagingAndSorting(this.index,this.records,field,this.direction).subscribe((obj:any)=>{
+    console.log(obj);
+    this.students=obj;
+  });
+  console.log('AFTER SORT');
 }
+
+// gridChange(){
+//   if(this.flag && this.temp){
+//     this.flag=false;
+//     this.temp=false
+//   }
+//   else{
+//     this.flag=true;
+//     this.temp=true;
+//   }
+  
+// }
 
 
 

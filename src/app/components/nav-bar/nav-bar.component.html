@@ -1,24 +1,29 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <button mat-icon-button (click)="backToHome()" class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon>home</mat-icon>
     </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
-      </button>
+      </button> -->
   
-     
-       <mat-icon (click)="onClick()" class='material-icons-outlined' style = "float:  right;" >logout</mat-icon>
       
       
-      <span>Student Application</span>
+    <!-- <span>  <mat-icon (click)="gridChange()" style = "float:  right">grid_view</mat-icon></span> -->
+      
+      <span>STUDENT APPLICATION </span>
+    <!-- <span> <button style="margin-left: 50px;" type="submit" mat-raised-button color="primary" (click)="addStudent()">Add Student</button></span> -->
+     <mat-icon (click)="addStudent()" style = " margin-left: 12px; float:  right">playlist_add</mat-icon>
+      <span>  <mat-icon (click)="gridChange()" style = " margin-left: 12px; float:  right">grid_view</mat-icon></span>
       <span class="example-spacer"></span>
+      
+      <mat-icon (click)="onClick()" class='material-icons-outlined' style = " float:  right" >logout</mat-icon>
 
       <!-- <button mat-raised-button color="warn"  style = "position:fixed; right:120px;">Add Student</button> -->
       <!-- <li class="add">
        
         <a routerLink="add-update" routerLinkActive="active" class="nav-link" >Add Student</a>
       </li> -->
-      <button type="submit" mat-raised-button color="primary" (click)="addStudent()">Add Student</button>
+      <!-- <button type="submit" mat-raised-button color="primary" (click)="addStudent()">Add Student</button> -->
     </mat-toolbar>
 
    

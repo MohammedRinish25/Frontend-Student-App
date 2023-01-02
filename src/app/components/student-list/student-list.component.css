@@ -1,10 +1,72 @@
-table {
+/* table {
     width: 150%;
-    background-color: silver;
+    background-color: #dfe2f5;
   }
   
   .mat-elevation-z8{
     overflow: scroll;
   }
 
+  a:hover {
+    background-color: yellow;
+  } */
+
+  table {
+   width: 150%;
+   background-color: plum;
+ }
+
+ .scroll{
+  overflow-y: scroll;
+  max-height: 64%;
+ }
+
+
+   
+
+
+.list-icons{
+  float: none;
+}
+
+td{
+  background-color: plum;
+  color: black;
   
+}
+
+
+th{
+  font-weight: bold;
+  background-color: plum; 
+  color:  black;
+  text-align: center;
+    
+}
+
+mat-paginator{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+
+/* 
+.mat-form-field{
+ 
+  height: 30px;
+  width: 200px;
+  float: center;
+} 
+.mat-select{
+ 
+ 
+  color: black;
+  height: 30px;
+  width: 200px;
+  float: center;
+}
+.example-full-width{
+  float: right;
+}  */

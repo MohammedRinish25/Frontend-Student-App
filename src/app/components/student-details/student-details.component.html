@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<!-- <mat-card class="example-card">
     <mat-card-title-group>
       <mat-card-title>STUDENT ID : {{student.id}}</mat-card-title>
       <mat-card-title>NAME : {{student.name}}</mat-card-title>
@@ -14,28 +14,139 @@
       <mat-card-title>ADDRESS : {{student.address.city}},{{student.address.state}},{{student.address.country}},{{student.address.zip}}</mat-card-title>
       <mat-card-title>SCHOOL NAME : {{student.schoolName}}</mat-card-title>
       <mat-card-title>MEDIUM : {{student.mediumOfInstruction}}</mat-card-title>
-       <mat-card-title>PHONE : {{student.phoneNumber}}</mat-card-title>
+      <mat-card-title>PHONE : {{student.phoneNumber}}</mat-card-title>
        <mat-card-title>EMAIL : {{student.email}}</mat-card-title>
        <mat-card-title>RELIGION : {{student.religion}}</mat-card-title>
-       <mat-card-title>PHONE : {{student.occupation}}</mat-card-title>
-       <mat-card-title>PHONE : {{student.annualIncome}}</mat-card-title>
-       <mat-card-title>PHONE : {{student.annualIncome}}</mat-card-title>
-      
+       <mat-card-title>OOCUPATION : {{student.occupation}}</mat-card-title>
+       <mat-card-title>INCOME : {{student.annualIncome}}</mat-card-title>
+       <mat-card-title>REMARK : {{student.remark}}</mat-card-title>
       
     </mat-card-title-group>
    
-  </mat-card>
-
-
+  </mat-card> -->
+<br>
+<div >
   
+<mat-card class="example-card">
+    <mat-card-title-group>
+        <mat-card-content>
+            <table>
+                <tr>
+                    <td> <b>STUDENT ID :</b>{{student.id}}</td>
+                    <td> <b>NAME :</b> {{student.name}}</td>
+                </tr>
+                <tr>
+                    <td><b>ADMISSION NUMBER :</b> {{student.admissionNumber}}</td>
+                    <td><b> D.O.B :</b> {{student.dateOfBirth | date: 'M/d/yy'}}</td> 
+                </tr>
+            </table>
+        </mat-card-content>
+    </mat-card-title-group>
+</mat-card>
+   
+<br>
 
 
+<mat-card class="example-card">
+<mat-card-title-group>
+    <mat-card-content>
+        <table>
+            <tr>
+                <td><b>GENDER :</b> {{student.gender}}</td> 
+                <td><b> SECTION :</b> {{student.section}}</td>
+            </tr>
+            <tr>
+                <td><b> DIVISION :</b> {{student.division}}</td>
+                <td><b>SCHOOL NAME :</b> {{student.schoolName}}</td>
+            </tr>
+        </table>
+    </mat-card-content>
+</mat-card-title-group>
+</mat-card>
+<br>
+
+<mat-card class="example-card">
+    <mat-card-title-group>
+        <mat-card-content>
+            <table>
+                <tr>
+                    <td><b>TOTAL MARKS :</b> {{student.totalMarks}}</td>
+                    <td><b>PERCENTAGE : </b>{{student.percentage}}</td>
+                    
+                </tr>
+                <tr>
+                    <td><b>RESULT : </b>{{student.result}}</td>
+                    <td><b>REMARK : </b>{{student.remark}}</td>
+                </tr>
+            </table>
+        </mat-card-content>
+    </mat-card-title-group>
+</mat-card>   
+<br>
+
+<mat-card class="example-card">
+    <mat-card-title-group>
+        <mat-card-content>
+            <table>
+                <tr>
+                    <td><b>MEDIUM :</b> {{student.mediumOfInstruction}}</td>
+                    <td><b>NATIONALITY :</b> {{student.nationality}}</td>
+                    <tr>
+                 <tr>
+                    <td><b>PHONE :</b> {{student.phoneNumber}}</td>
+                    <td><b>EMERGENCY CONTACT:</b>{{student.emergencyContact}}</td>
+                </tr>
+            </table>
+        </mat-card-content>
+        
+    </mat-card-title-group>
+</mat-card>
 
 
+<br>
+
+<mat-card class="example-card">
+    <mat-card-title-group>
+        <mat-card-content>
+            <table> 
+                <tr>
+                 <td><b>CITY :</b>{{student.address.city}}</td>
+                 <td><b>STATE:</b>{{student.address.state}}</td>
+                 <tr>
+                <tr>
+                 <td><b>COUNTRY:</b>{{student.address.country}}</td>
+                 <td><b>ZIP:</b>{{student.address.zip}}</td>
+                 <tr>
+                <tr>
+                
+            </table>
+        </mat-card-content>
+        
+    </mat-card-title-group>
+</mat-card>
+
+<br>
 
 
+<mat-card class="example-card">
+        <mat-card-title-group>
+            <mat-card-content>
+                <table>
+                    <tr>
+                        <td><b>FATHERS NAME:</b>{{student.fathername}}</td>
+                        <td><b>RELIGION : </b>{{student.religion}}</td>
+                        </tr>
+                     <tr>
+                         <td><b> OCUPATION : </b>{{student.occupation}}</td>
+                        <td><b> INCOME :</b> {{student.annualIncome}}</td>
 
-
+                    </tr>
+                </table>
+            </mat-card-content>
+        </mat-card-title-group>
+</mat-card>
+             
+</div>       
 
 
 

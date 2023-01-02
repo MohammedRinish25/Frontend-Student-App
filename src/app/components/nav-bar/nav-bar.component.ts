@@ -19,6 +19,29 @@ export class NavBarComponent implements OnInit {
 
   }
 
+  // addStudent(){
+  //   this._router.navigate(['/add-student'])
+  // }
+
+  flag:boolean=true;
+
+  gridChange(){
+    if(this.flag ){
+      this.flag=false;
+      this._router.navigate(['/student-grid'])
+    
+    }
+    else{
+      this.flag=true;
+      this._router.navigate(['/student-list'])
+    }
+    
+  }
+
+  backToHome(){
+    this._router.navigate(['/student-list'])
+  }
+
   addStudent(){
     this._router.navigate(['/add-student'])
   }

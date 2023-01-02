@@ -1,7 +1,9 @@
 .example-spacer {
    flex: 1 ;
+   text-align: center;
  }
  .mat-toolbar{
-   background-color:navy;
+   background-color: rgb(128, 0, 128);
    height: 50px;
  }
+ 

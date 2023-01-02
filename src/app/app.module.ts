@@ -12,6 +12,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StudentDetailsComponent } from './components/student-details/student-details.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { MaterialsModule } from './modules/materials/materials.module';
+import { StudentGridComponent } from './components/student-grid/student-grid.component';
 
 //import { GridModule, ToolbarService, ColumnChooserService } from '@syncfusion/ej2-angular-grids';
 
@@ -22,7 +23,8 @@ import { MaterialsModule } from './modules/materials/materials.module';
     DashboardComponent,
     NavBarComponent,
     StudentDetailsComponent,
-    StudentListComponent
+    StudentListComponent,
+    StudentGridComponent
     
    
   ],

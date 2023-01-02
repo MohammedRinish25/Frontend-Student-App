@@ -1,0 +1,21 @@
+mat-card{
+    justify-content: center;
+    display: flex;
+    color: black;
+    width: 600px;
+    padding-bottom: -10px;
+    background-color: rgb(255, 230, 255);
+}
+
+td{
+    height: 30px;
+    padding: 15px;
+}
+table{
+    border: 3px;
+}
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

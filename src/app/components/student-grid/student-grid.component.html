@@ -1,0 +1,23 @@
+
+<br>
+
+<div>
+
+
+    <div fxLayout="row wrap" fxLayoutGap="16px">
+      <div fxFlex="25" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let student of students ">
+        <mat-card class="mat-elevation-z4" (click)="studentDetails(student)" style= " margin-left: 20px;margin-bottom: 20px ;float:left ; height: 200px; width: 280px; flex: 2px;
+        border-radius: 25px; background-color: rgb(255, 230, 255); ">
+            <mat-card-title>Student Details {{student.id}}</mat-card-title>
+         
+          <mat-card-content>
+            <h3 style="text-align: center;">Name: {{student.name}}</h3>
+            {{student.result}}<br>
+            {{student.remark}}<br>
+          </mat-card-content>
+         
+        </mat-card>
+      </div>
+    </div>
+  
+  </div>
